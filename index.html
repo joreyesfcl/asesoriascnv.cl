@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNV Asesorías · Consultoría en Estrategia de Intervención Pública</title>
+    <meta name="description" content="Apoyamos a instituciones públicas, gobiernos regionales y municipios a fortalecer sus decisiones de intervención con rigor técnico, evidencia y comprensión del sistema.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-deep: #112540;
+            --navy-mid: #1B3A5C;
+            --navy-dark: #1A1A2E;
+            --gold: #C8953A;
+            --gold-light: #E0B060;
+            --teal: #1F6F78;
+            --teal-light: #2a8f9a;
+            --green: #1F7048;
+            --slate: #8A9BB0;
+            --light-bg: #F2F4F7;
+            --card-bg: #F8F9FB;
+            --white: #FFFFFF;
+            --text-dark: #1A1A2E;
+            --text-body: #3a4a5c;
+            --text-muted: #6b7a8d;
+            --border-light: #D5DCE8;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Segoe UI', Calibri, sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-body);
+            line-height: 1.7;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(17, 37, 64, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(200, 149, 58, 0.15);
+            transition: box-shadow 0.3s;
+        }
+        .nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.8rem 2rem;
+        }
+        .nav-logo {
+            display: flex; align-items: baseline; gap: 0.5rem;
+            text-decoration: none;
+        }
+        .nav-logo-cnv {
+            font-family: var(--font-body);
+            font-size: 1.5rem; font-weight: 700;
+            color: var(--white); letter-spacing: 0.04em;
+        }
+        .nav-logo-sub {
+            font-family: var(--font-body);
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
+        }
+        .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+        .nav-links a {
+            color: rgba(255,255,255,0.75); text-decoration: none;
+            font-size: 0.85rem; font-weight: 400; letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-cta {
+            background: var(--gold) !important; color: var(--navy-deep) !important;
+            padding: 0.5rem 1.2rem !important; border-radius: 4px;
+            font-weight: 600 !important; font-size: 0.82rem !important;
+            letter-spacing: 0.03em;
+            transition: background 0.2s !important;
+        }
+        .nav-cta:hover { background: var(--gold-light) !important; }
+
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .nav-toggle span {
+            display: block; width: 22px; height: 2px; background: var(--white);
+            margin: 5px 0; transition: 0.3s;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-deep) 40%, var(--navy-mid) 100%);
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            padding-top: 4rem;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; top: -30%; right: -10%; width: 70%; height: 160%;
+            background: radial-gradient(ellipse, rgba(31,111,120,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .hero-inner {
+            max-width: 1200px; margin: 0 auto; padding: 4rem 2rem;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+            align-items: center; position: relative; z-index: 1;
+        }
+        .hero-left {}
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 2rem;
+        }
+        .hero-badge::before {
+            content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.6rem, 5vw, 3.8rem);
+            font-weight: 600; line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 em {
+            font-style: italic; color: var(--gold-light);
+        }
+        .hero-desc {
+            font-size: 1.1rem; line-height: 1.75;
+            color: rgba(255,255,255,0.72);
+            max-width: 500px;
+            margin-bottom: 2.5rem;
+        }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--gold); color: var(--navy-deep);
+            padding: 0.85rem 1.8rem; border-radius: 4px;
+            text-decoration: none; font-weight: 600; font-size: 0.9rem;
+            letter-spacing: 0.02em; transition: all 0.25s;
+            border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: transparent; color: rgba(255,255,255,0.8);
+            padding: 0.85rem 1.8rem; border-radius: 4px;
+            text-decoration: none; font-weight: 400; font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.2); transition: all 0.25s;
+        }
+        .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+        .hero-right {
+            display: flex; flex-direction: column; gap: 1.2rem;
+        }
+        .hero-stat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-left: 3px solid var(--gold);
+            padding: 1.4rem 1.6rem; border-radius: 0 6px 6px 0;
+            transition: background 0.3s;
+        }
+        .hero-stat:hover { background: rgba(255,255,255,0.07); }
+        .hero-stat-icon {
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        .hero-stat-text {
+            font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6;
+        }
+
+        /* ── SECTION COMMON ── */
+        .section { padding: 6rem 2rem; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .section-label-light { color: var(--gold-light); }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 600; line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        .section-title-light { color: var(--white); }
+        .section-subtitle {
+            font-size: 1.05rem; color: var(--text-muted);
+            max-width: 620px; line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+        .section-subtitle-light { color: rgba(255,255,255,0.65); }
+
+        /* ── CONTEXT / CHALLENGES ── */
+        .context { background: var(--light-bg); }
+        .context-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .context-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px; padding: 2rem;
+            transition: all 0.3s;
+        }
+        .context-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 8px 32px rgba(200,149,58,0.08);
+            transform: translateY(-2px);
+        }
+        .context-card-icon {
+            width: 48px; height: 48px;
+            background: var(--navy-deep); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; margin-bottom: 1.2rem;
+        }
+        .context-card h3 {
+            font-family: var(--font-body);
+            font-size: 1.05rem; font-weight: 700;
+            color: var(--navy-mid); margin-bottom: 0.75rem;
+        }
+        .context-card p {
+            font-size: 0.9rem; color: var(--text-muted); line-height: 1.65;
+        }
+        .context-footer {
+            text-align: center; font-style: italic;
+            font-family: var(--font-display);
+            font-size: 1.15rem; color: var(--navy-mid);
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* ── ABOUT ── */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+            align-items: start;
+        }
+        .about-text p {
+            margin-bottom: 1.2rem; font-size: 1rem; line-height: 1.75;
+        }
+        .about-text .highlight {
+            font-family: var(--font-display);
+            font-size: 1.3rem; font-weight: 600;
+            color: var(--navy-mid); font-style: italic;
+            line-height: 1.5; margin-bottom: 1.5rem;
+        }
+        .about-pillars {
+            display: flex; flex-direction: column; gap: 1rem;
+        }
+        .about-pillar {
+            border-left: 3px solid var(--gold);
+            padding: 1rem 1.4rem;
+            background: var(--card-bg);
+            border-radius: 0 6px 6px 0;
+        }
+        .about-pillar-label {
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 0.35rem;
+        }
+        .about-pillar h4 {
+            font-size: 0.95rem; font-weight: 600; color: var(--navy-mid);
+            margin-bottom: 0.25rem;
+        }
+        .about-pillar p {
+            font-size: 0.85rem; color: var(--text-muted); line-height: 1.55;
+        }
+
+        /* ── VALUE PROP ── */
+        .value { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-deep) 50%, #162d48 100%); }
+        .value-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+        }
+        .value-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px; padding: 2rem;
+            transition: all 0.3s;
+        }
+        .value-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(200,149,58,0.3);
+        }
+        .value-card-icon {
+            font-size: 1.5rem; margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .value-card h3 {
+            font-size: 1.05rem; font-weight: 700;
+            color: var(--white); margin-bottom: 0.6rem;
+        }
+        .value-card p {
+            font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.65;
+        }
+
+        /* ── SERVICES ── */
+        .services { background: var(--light-bg); }
+        .pillars-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+        }
+        .pillar-col {}
+        .pillar-header {
+            background: var(--navy-deep);
+            color: var(--white);
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px 8px 0 0;
+            font-size: 0.7rem; font-weight: 700;
+            letter-spacing: 0.12em; text-transform: uppercase;
+        }
+        .pillar-header span {
+            display: block; font-size: 1rem; font-weight: 600;
+            letter-spacing: 0; text-transform: none;
+            margin-top: 0.4rem; font-family: var(--font-body);
+            color: var(--gold-light);
+        }
+        .pillar-body {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 1.5rem;
+        }
+        .service-item {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--light-bg);
+        }
+        .service-item:last-child { border-bottom: none; }
+        .service-dot {
+            width: 6px; height: 6px; min-width: 6px;
+            background: var(--gold); border-radius: 1px;
+            margin-top: 0.55rem;
+        }
+        .service-item-text {
+            font-size: 0.9rem; color: var(--text-body); line-height: 1.5;
+        }
+        .pillar-question {
+            margin-top: 1.2rem; padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+            font-style: italic; font-family: var(--font-display);
+            font-size: 0.95rem; color: var(--teal);
+            line-height: 1.5;
+        }
+
+        /* ── DIFFERENTIATORS ── */
+        .diff-list {
+            display: flex; flex-direction: column; gap: 0;
+            max-width: 900px;
+        }
+        .diff-item {
+            display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-light);
+            align-items: start;
+        }
+        .diff-item:last-child { border-bottom: none; }
+        .diff-number {
+            font-family: var(--font-display);
+            font-size: 2.2rem; font-weight: 700;
+            color: var(--gold); line-height: 1;
+        }
+        .diff-content h3 {
+            font-size: 1.1rem; font-weight: 700;
+            color: var(--navy-mid); margin-bottom: 0.5rem;
+        }
+        .diff-content p {
+            font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;
+        }
+
+        /* ── SCENARIOS ── */
+        .scenarios { background: var(--light-bg); }
+        .scenario-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem;
+        }
+        .scenario-card {
+            background: var(--white);
+            border: 1px solid var(--border-light);
+            border-radius: 8px; overflow: hidden;
+            transition: all 0.3s;
+        }
+        .scenario-card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
+        }
+        .scenario-card-header {
+            background: var(--navy-deep);
+            padding: 1.2rem 1.5rem;
+        }
+        .scenario-type {
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--gold);
+            margin-bottom: 0.4rem;
+        }
+        .scenario-card-header h3 {
+            font-size: 0.95rem; font-weight: 600;
+            color: var(--white); line-height: 1.45;
+        }
+        .scenario-card-body { padding: 1.5rem; }
+        .scenario-label {
+            font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--slate);
+            margin-bottom: 0.4rem;
+        }
+        .scenario-card-body p {
+            font-size: 0.88rem; color: var(--text-body); line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .scenario-result {
+            background: rgba(31,112,72,0.06);
+            border-left: 3px solid var(--green);
+            padding: 0.8rem 1rem; border-radius: 0 4px 4px 0;
+        }
+        .scenario-result p {
+            font-size: 0.85rem; color: var(--green); font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        /* ── CLIENTS ── */
+        .clients { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-deep) 100%); }
+        .clients-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+        }
+        .client-tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px; padding: 1.2rem 1.4rem;
+            transition: all 0.3s;
+        }
+        .client-tag:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(200,149,58,0.3);
+        }
+        .client-tag h4 {
+            font-size: 0.92rem; font-weight: 600; color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+        .client-tag p {
+            font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5;
+        }
+
+        /* ── MODALITIES ── */
+        .modalities-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+        }
+        .mod-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 8px; padding: 1.8rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .mod-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 20px rgba(200,149,58,0.08);
+        }
+        .mod-icon {
+            font-size: 1.6rem; margin-bottom: 0.8rem;
+        }
+        .mod-card h4 {
+            font-size: 0.95rem; font-weight: 700;
+            color: var(--navy-mid); margin-bottom: 0.5rem;
+        }
+        .mod-card p {
+            font-size: 0.84rem; color: var(--text-muted); line-height: 1.55;
+        }
+
+        /* ── CONTACT ── */
+        .contact {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-deep) 40%, var(--navy-mid) 100%);
+            position: relative;
+        }
+        .contact::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .contact-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+            align-items: start;
+        }
+        .contact-left {}
+        .contact-left .section-title-light {
+            margin-bottom: 1rem;
+        }
+        .contact-quote {
+            font-family: var(--font-display);
+            font-size: 1.15rem; font-style: italic;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem; line-height: 1.6;
+        }
+        .contact-left p {
+            font-size: 0.95rem; color: rgba(255,255,255,0.6);
+            line-height: 1.7; margin-bottom: 1.5rem;
+        }
+        .contact-info { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 2rem; }
+        .contact-info a {
+            display: flex; align-items: center; gap: 0.75rem;
+            color: rgba(255,255,255,0.7); text-decoration: none;
+            font-size: 0.92rem; transition: color 0.2s;
+        }
+        .contact-info a:hover { color: var(--gold); }
+        .contact-info-icon {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(200,149,58,0.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px; padding: 2.5rem;
+        }
+        .contact-form h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem; font-weight: 600;
+            color: var(--white); margin-bottom: 1.5rem;
+        }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label {
+            display: block; font-size: 0.8rem; font-weight: 600;
+            color: rgba(255,255,255,0.6); margin-bottom: 0.4rem;
+            letter-spacing: 0.04em;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            transition: border-color 0.2s;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(255,255,255,0.08);
+        }
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff60' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        .form-group select option {
+            background: var(--navy-deep); color: var(--white);
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-submit {
+            width: 100%; margin-top: 0.5rem;
+        }
+        .form-note {
+            font-size: 0.78rem; color: rgba(255,255,255,0.35);
+            margin-top: 0.8rem; text-align: center;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: #0a1628;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer p {
+            font-size: 0.8rem; color: rgba(255,255,255,0.3);
+        }
+
+        /* ── ANIMATIONS ── */
+        .fade-in {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1; transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 960px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-right { display: none; }
+            .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .value-grid { grid-template-columns: 1fr; }
+            .scenario-grid { grid-template-columns: 1fr; }
+            .clients-grid { grid-template-columns: 1fr 1fr; }
+            .modalities-grid { grid-template-columns: 1fr 1fr; }
+            .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+            .context-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--navy-deep);
+                padding: 1rem 2rem 1.5rem; gap: 0.8rem;
+                border-bottom: 1px solid rgba(200,149,58,0.15);
+            }
+            .nav-toggle { display: block; }
+            .hero { min-height: auto; padding: 8rem 0 4rem; }
+            .section { padding: 4rem 1.5rem; }
+            .hero-inner { padding: 2rem 1.5rem; }
+            .clients-grid { grid-template-columns: 1fr; }
+            .modalities-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .diff-item { grid-template-columns: 40px 1fr; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-cnv">CNV</span>
+                <span class="nav-logo-sub">Asesorías</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#contexto">Contexto</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#diferenciadores">Por qué CNV</a>
+                <a href="#escenarios">Casos</a>
+                <a href="#contacto" class="nav-cta">Conversemos</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-badge">Consultoría en estrategia de intervención pública</div>
+                <h1>Decisiones públicas <em>más sólidas.</em></h1>
+                <p class="hero-desc">
+                    Apoyamos a instituciones públicas, gobiernos regionales y municipios a fortalecer sus decisiones de intervención con rigor técnico, evidencia y comprensión del sistema.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#contacto" class="btn-primary">Conversemos →</a>
+                    <a href="#servicios" class="btn-secondary">Conocer servicios</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">Decisiones más sólidas</div>
+                    <div class="hero-stat-text">Diagnósticos territoriales con profundidad analítica real y bases de evidencia que respaldan cada decisión.</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">Iniciativas más viables</div>
+                    <div class="hero-stat-text">Formulaciones alineadas con el SNI y el SME. Pre-evaluación que anticipa observaciones antes de ingresar al sistema.</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">Carteras más coherentes</div>
+                    <div class="hero-stat-text">Iniciativas como sistema interdependiente: con priorización, secuencia y estrategia de financiamiento articulada.</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-icon">Capacidad de demostrar resultados</div>
+                    <div class="hero-stat-text">Sistemas de monitoreo y evaluación que permiten medir el avance y comunicar el impacto con evidencia.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTEXTO -->
+    <section class="section context" id="contexto">
+        <div class="section-inner">
+            <div class="section-label fade-in">El contexto que enfrentan nuestros clientes</div>
+            <h2 class="section-title fade-in">Gestionar intervenciones públicas es cada vez más complejo</h2>
+            <p class="section-subtitle fade-in">Los gobiernos regionales, municipios y otras instituciones enfrentan desafíos simultáneos que no reflejan falta de compromiso, sino la complejidad creciente de un entorno que demanda respuestas cada vez más sofisticadas.</p>
+            <div class="context-grid">
+                <div class="context-card fade-in">
+                    <div class="context-card-icon">📋</div>
+                    <h3>Alta exigencia técnica</h3>
+                    <p>El SNI y el SME demandan metodologías rigurosas y evaluaciones precisas en contextos donde los equipos técnicos atienden múltiples prioridades simultáneamente.</p>
+                </div>
+                <div class="context-card fade-in">
+                    <div class="context-card-icon">🗺️</div>
+                    <h3>Diagnósticos incompletos</h3>
+                    <p>La dispersión de fuentes y la complejidad territorial dificultan diagnósticos sólidos que sustenten decisiones de inversión con pertinencia local.</p>
+                </div>
+                <div class="context-card fade-in">
+                    <div class="context-card-icon">🔗</div>
+                    <h3>Iniciativas desarticuladas</h3>
+                    <p>Programas e inversión gestionados de forma independiente generan duplicidades, vacíos de atención y oportunidades de financiamiento desaprovechadas.</p>
+                </div>
+                <div class="context-card fade-in">
+                    <div class="context-card-icon">💰</div>
+                    <h3>Financiamiento fragmentado</h3>
+                    <p>Ausencia de una estrategia que aborde la cartera como sistema integrado, desaprovechando complementariedades entre instrumentos y fuentes disponibles.</p>
+                </div>
+                <div class="context-card fade-in">
+                    <div class="context-card-icon">📊</div>
+                    <h3>Dificultad para demostrar resultados</h3>
+                    <p>Instituciones ejecutan programas sin los sistemas de monitoreo, indicadores ni evaluaciones que permitan medir y comunicar el impacto de sus intervenciones.</p>
+                </div>
+                <div class="context-card fade-in">
+                    <div class="context-card-icon">⏳</div>
+                    <h3>Limitada capacidad de preinversión</h3>
+                    <p>Iniciativas que avanzan sin respaldo técnico suficiente, con presupuestos inadecuados o sin los estudios que el sistema requiere para evaluar su pertinencia.</p>
+                </div>
+            </div>
+            <div class="context-footer fade-in">
+                En este contexto, la calidad técnica de las decisiones no es un lujo — es una condición de legitimidad y de impacto real.
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="section" id="nosotros">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <div class="section-label">Quiénes somos</div>
+                    <h2 class="section-title">Nacimos desde adentro del sistema.</h2>
+                    <p class="highlight">Conocemos el SNI y el SME porque los hemos operado.</p>
+                    <p>CNV fue fundada por profesionales con formación en ingeniería, economía y estadística, con experiencia directa en la formulación, evaluación y gestión de programas e iniciativas de inversión dentro del sistema público chileno.</p>
+                    <p>Hemos trabajado en las instituciones que definen las reglas del sistema, lo que nos permite entender no solo qué se exige, sino por qué se exige y cómo cumplirlo con la mayor solidez técnica y la menor fricción posible.</p>
+                    <p>Ponemos ese conocimiento al servicio de instituciones públicas, gobiernos regionales y municipios, apoyando a sus equipos técnicos en transformar recursos limitados en intervenciones sólidas, pertinentes y con impacto real.</p>
+                </div>
+                <div class="about-pillars fade-in">
+                    <div class="about-pillar">
+                        <div class="about-pillar-label">Origen</div>
+                        <h4>Experiencia desde dentro</h4>
+                        <p>Trayectoria en las instituciones que administran el SNI y el SME, formulando, evaluando y resolviendo.</p>
+                    </div>
+                    <div class="about-pillar">
+                        <div class="about-pillar-label">Formación</div>
+                        <h4>Ingeniería, economía y estadística</h4>
+                        <p>Formación cuantitativa orientada al análisis y modelación de problemas sociales y evaluación de políticas públicas.</p>
+                    </div>
+                    <div class="about-pillar">
+                        <div class="about-pillar-label">Enfoque</div>
+                        <h4>Programas e inversión integrados</h4>
+                        <p>Articulamos programas sociales e inversión pública bajo una misma lógica de análisis, diseño y evaluación.</p>
+                    </div>
+                    <div class="about-pillar">
+                        <div class="about-pillar-label">Compromiso</div>
+                        <h4>Su posición, no solo el entregable</h4>
+                        <p>Cada trabajo termina con la institución en mejor posición para decidir, formular y demostrar resultados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR -->
+    <section class="section value" id="propuesta">
+        <div class="section-inner">
+            <div class="section-label section-label-light fade-in">Propuesta de valor</div>
+            <h2 class="section-title section-title-light fade-in">Acompañamos a instituciones públicas a tomar mejores decisiones de intervención</h2>
+            <p class="section-subtitle section-subtitle-light fade-in">Nuestra propuesta combina conocimiento profundo del Estado, experiencia directa en políticas públicas y dominio de las metodologías y herramientas técnicas que guían el SNI y el SME.</p>
+            <div class="value-grid">
+                <div class="value-card fade-in">
+                    <div class="value-card-icon">🎯</div>
+                    <h3>Decisiones más sólidas</h3>
+                    <p>Diagnósticos territoriales con profundidad analítica real y bases de evidencia que respaldan cada decisión de intervención con rigor técnico.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-card-icon">⚙️</div>
+                    <h3>Iniciativas más viables</h3>
+                    <p>Formulaciones alineadas con el SNI y el SME. Pre-evaluación que anticipa observaciones antes de ingresar al sistema formal de análisis.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-card-icon">📊</div>
+                    <h3>Carteras más coherentes</h3>
+                    <p>Las iniciativas de su institución como sistema interdependiente: con priorización, secuencia y estrategia de financiamiento articulada.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <div class="value-card-icon">✅</div>
+                    <h3>Capacidad de demostrar resultados</h3>
+                    <p>Sistemas de monitoreo y evaluación que permiten medir el avance y comunicar el impacto con evidencia ante las instancias que lo requieren.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section services" id="servicios">
+        <div class="section-inner">
+            <div class="section-label fade-in">Nuestros servicios</div>
+            <h2 class="section-title fade-in">Tres pilares que cubren el ciclo completo de la intervención pública</h2>
+            <p class="section-subtitle fade-in">Cada pilar agrupa servicios especializados que pueden contratarse de manera individual o encadenarse en una asistencia técnica integral.</p>
+
+            <div class="pillars-grid">
+                <!-- PILAR 1 -->
+                <div class="pillar-col fade-in">
+                    <div class="pillar-header">
+                        Pilar 01
+                        <span>Diagnóstico e identificación de brechas</span>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Diagnóstico de problemas, brechas territoriales y oportunidades de intervención</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Desarrollo de carteras integrales de intervención desde el diagnóstico</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Análisis de oferta programática</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Modelamientos y análisis aplicados a problemas públicos</span>
+                        </div>
+                        <div class="pillar-question">¿Qué problemas tiene el territorio y dónde están las oportunidades?</div>
+                    </div>
+                </div>
+
+                <!-- PILAR 2 -->
+                <div class="pillar-col fade-in">
+                    <div class="pillar-header">
+                        Pilar 02
+                        <span>Diseño óptimo de soluciones</span>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Diseño o rediseño de programas públicos</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Diseño de mecanismos de focalización y acceso</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Formulación y evaluación de iniciativas de inversión (ficha IDI, BIP)</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Formulación de carteras integrales de programas e inversión</span>
+                        </div>
+                        <div class="pillar-question">¿Cómo convertir el diagnóstico en intervenciones viables y sólidas?</div>
+                    </div>
+                </div>
+
+                <!-- PILAR 3 -->
+                <div class="pillar-col fade-in">
+                    <div class="pillar-header">
+                        Pilar 03
+                        <span>Gestión, evaluación y financiamiento</span>
+                    </div>
+                    <div class="pillar-body">
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Evaluación de programas públicos</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Resolución de observaciones del SNI</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Contraparte técnica de estudios licitados</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Diseño de estrategias de financiamiento</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-dot"></div>
+                            <span class="service-item-text">Sistemas de seguimiento, monitoreo y gestión</span>
+                        </div>
+                        <div class="pillar-question">¿Cómo hacer que las intervenciones avancen y demuestren resultados?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUÉ NOS DIFERENCIA -->
+    <section class="section" id="diferenciadores">
+        <div class="section-inner">
+            <div class="section-label fade-in">Qué nos diferencia</div>
+            <h2 class="section-title fade-in">La combinación que no encontrará replicada en otra consultora</h2>
+            <p class="section-subtitle fade-in">En un mercado donde diversas consultoras ofrecen servicios de formulación o diseño de programas, lo que distingue a CNV es una combinación de atributos que configuran una propuesta única.</p>
+
+            <div class="diff-list">
+                <div class="diff-item fade-in">
+                    <div class="diff-number">01</div>
+                    <div class="diff-content">
+                        <h3>Conocimiento del sistema desde adentro</h3>
+                        <p>Hemos operado el SNI y el SME. Sabemos lo que se exige, por qué se exige y cómo cumplirlo con la mayor solidez técnica. No es solo conocer las normas: es entender la lógica institucional detrás de cada requisito.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-number">02</div>
+                    <div class="diff-content">
+                        <h3>Programas e inversión bajo una misma lógica</h3>
+                        <p>Cubrimos el ciclo completo con una mirada integrada. Cuando un territorio enfrenta brechas complejas, la respuesta suele requerir una combinación articulada de programas e inversión.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-number">03</div>
+                    <div class="diff-content">
+                        <h3>Enfoque de cartera como sistema</h3>
+                        <p>Entendemos las iniciativas como un portafolio interdependiente que debe priorizarse, secuenciarse y articularse con una estrategia de financiamiento, maximizando el impacto colectivo.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-number">04</div>
+                    <div class="diff-content">
+                        <h3>Análisis territorial basado en datos</h3>
+                        <p>Diagnósticos construidos con evidencia específica del territorio, no respuestas genéricas ni aproximaciones descriptivas. Cada territorio tiene su realidad y merece propuestas a su medida.</p>
+                    </div>
+                </div>
+                <div class="diff-item fade-in">
+                    <div class="diff-number">05</div>
+                    <div class="diff-content">
+                        <h3>Complejidad traducida en decisiones claras</h3>
+                        <p>Productos técnicamente sólidos y al mismo tiempo comprensibles para autoridades, equipos técnicos, concejos comunales y consejos regionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESCENARIOS -->
+    <section class="section scenarios" id="escenarios">
+        <div class="section-inner">
+            <div class="section-label fade-in">Cómo se ve en la práctica</div>
+            <h2 class="section-title fade-in">Escenarios que ilustran el valor de nuestro acompañamiento</h2>
+            <p class="section-subtitle fade-in">Situaciones tipo construidas a partir de patrones frecuentes en la realidad institucional chilena.</p>
+
+            <div class="scenario-grid">
+                <div class="scenario-card fade-in">
+                    <div class="scenario-card-header">
+                        <div class="scenario-type">Municipio</div>
+                        <h3>PLADECO desactualizado y baja capacidad de preinversión</h3>
+                    </div>
+                    <div class="scenario-card-body">
+                        <div class="scenario-label">Situación</div>
+                        <p>Diagnóstico desactualizado e iniciativas sin respaldo técnico para avanzar en el SNI.</p>
+                        <div class="scenario-label">Intervención CNV</div>
+                        <p>Diagnóstico → Cartera integral → Formulación SNI → Estrategia de financiamiento</p>
+                        <div class="scenario-result">
+                            <p>PLADECO con sustento técnico, cartera priorizada e iniciativas formuladas y postuladas al SNI.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scenario-card fade-in">
+                    <div class="scenario-card-header">
+                        <div class="scenario-type">Gobierno Regional</div>
+                        <h3>Cartera de proyectos con observaciones SNI pendientes</h3>
+                    </div>
+                    <div class="scenario-card-body">
+                        <div class="scenario-label">Situación</div>
+                        <p>Iniciativas estancadas con observaciones de distinta naturaleza — equipo técnico desbordado.</p>
+                        <div class="scenario-label">Intervención CNV</div>
+                        <p>Subsanación → Pre-evaluación de nuevas postulaciones → Cartera para CORE</p>
+                        <div class="scenario-result">
+                            <p>Iniciativas retoman avance; nuevas formulaciones ingresan con mayor solidez técnica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scenario-card fade-in">
+                    <div class="scenario-card-header">
+                        <div class="scenario-type">Corporación Municipal</div>
+                        <h3>Ordenar programas e inversión bajo una lógica de conjunto</h3>
+                    </div>
+                    <div class="scenario-card-body">
+                        <div class="scenario-label">Situación</div>
+                        <p>Programas y proyectos gestionados de forma aislada, sin visión de cartera articulada.</p>
+                        <div class="scenario-label">Intervención CNV</div>
+                        <p>Análisis de oferta → Cartera integral → Rediseño de programas → Sistema de monitoreo</p>
+                        <div class="scenario-result">
+                            <p>Propuesta articulada presentable ante concejo y GORE; capacidad de rendir cuentas con evidencia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A QUIÉN NOS DIRIGIMOS -->
+    <section class="section clients" id="clientes">
+        <div class="section-inner">
+            <div class="section-label section-label-light fade-in">A quién nos dirigimos</div>
+            <h2 class="section-title section-title-light fade-in">Instituciones que requieren fortalecer el respaldo técnico de sus decisiones</h2>
+            <p class="section-subtitle section-subtitle-light fade-in" style="margin-bottom: 2.5rem;">Nuestro acompañamiento se adapta al contexto institucional, las capacidades del equipo y la naturaleza del desafío.</p>
+
+            <div class="clients-grid">
+                <div class="client-tag fade-in">
+                    <h4>Gobiernos regionales</h4>
+                    <p>Carteras de inversión, programas regionales y articulación de múltiples fuentes de financiamiento.</p>
+                </div>
+                <div class="client-tag fade-in">
+                    <h4>Municipios y corporaciones</h4>
+                    <p>Necesidades sociales crecientes con recursos limitados; fortalecimiento de diagnóstico, formulación y gestión.</p>
+                </div>
+                <div class="client-tag fade-in">
+                    <h4>Equipos técnicos institucionales</h4>
+                    <p>Profesionales de planificación, inversión y desarrollo social que pueden beneficiarse de nuestros productos y transferencia de capacidades.</p>
+                </div>
+                <div class="client-tag fade-in">
+                    <h4>Servicios públicos regionales</h4>
+                    <p>Programas y proyectos sectoriales que requieren apoyo en formulación, evaluación o articulación territorial.</p>
+                </div>
+                <div class="client-tag fade-in">
+                    <h4>Asociaciones de municipios</h4>
+                    <p>Desafíos compartidos entre comunas que requieren diagnósticos, carteras y estrategias supracomunales.</p>
+                </div>
+                <div class="client-tag fade-in">
+                    <h4>Actores del sector privado</h4>
+                    <p>Participantes en asociaciones público-privadas y mecanismos de financiamiento compartido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section class="section" id="modalidades">
+        <div class="section-inner">
+            <div class="section-label fade-in">Cómo trabajamos</div>
+            <h2 class="section-title fade-in">Flexibilidad, colaboración y transferencia de capacidades</h2>
+            <p class="section-subtitle fade-in">Nuestros servicios pueden contratarse de manera individual o integrarse en una asistencia técnica comprehensiva que cubra el ciclo completo.</p>
+
+            <div class="modalities-grid">
+                <div class="mod-card fade-in">
+                    <div class="mod-icon">📦</div>
+                    <h4>Por producto</h4>
+                    <p>Entregable específico y acotado para una necesidad concreta: un diagnóstico, una formulación, una estrategia.</p>
+                </div>
+                <div class="mod-card fade-in">
+                    <div class="mod-icon">🔄</div>
+                    <h4>Asesoría integral</h4>
+                    <p>Acompañamiento del ciclo completo de iniciativas, encadenando servicios en una secuencia planificada.</p>
+                </div>
+                <div class="mod-card fade-in">
+                    <div class="mod-icon">🔍</div>
+                    <h4>Contraparte técnica</h4>
+                    <p>Supervisión de estudios licitados; financiable dentro del presupuesto del propio estudio.</p>
+                </div>
+                <div class="mod-card fade-in">
+                    <div class="mod-icon">🤝</div>
+                    <h4>Apoyo a equipos</h4>
+                    <p>Trabajo colaborativo que transfiere capacidades durante la ejecución del mandato.</p>
+                </div>
+                <div class="mod-card fade-in">
+                    <div class="mod-icon">🎓</div>
+                    <h4>Talleres de formulación</h4>
+                    <p>Fortalecimiento de capacidades técnicas para el SNI, preinversión y proporcionalidad.</p>
+                </div>
+                <div class="mod-card fade-in">
+                    <div class="mod-icon">🎤</div>
+                    <h4>Presentación de resultados</h4>
+                    <p>Apoyo para comunicar propuestas ante autoridades, concejos y consejos regionales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section contact" id="contacto">
+        <div class="section-inner">
+            <div class="contact-inner">
+                <div class="contact-left fade-in">
+                    <div class="section-label section-label-light">Contáctenos</div>
+                    <h2 class="section-title section-title-light">La invitación es simple.</h2>
+                    <div class="contact-quote">Conversemos.</div>
+                    <p>Si su institución enfrenta alguno de los desafíos que describimos — o quiere explorar cómo fortalecer la calidad técnica de sus decisiones — el paso siguiente es fácil.</p>
+                    <p style="font-style: italic; color: var(--gold-light);">Cuéntennos cuál es su desafío más complejo.</p>
+
+                    <div class="contact-info">
+                        <a href="mailto:contacto@asesoriascnv.cl">
+                            <div class="contact-info-icon">✉</div>
+                            contacto@asesoriascnv.cl
+                        </a>
+                        <a href="https://www.asesoriascnv.cl">
+                            <div class="contact-info-icon">🌐</div>
+                            www.asesoriascnv.cl
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-in">
+                    <h3>Escríbanos</h3>
+                    <form action="https://formspree.io/f/FORM_ID" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Su nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cargo">Cargo</label>
+                                <input type="text" id="cargo" name="cargo" placeholder="Su cargo">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="institucion">Institución</label>
+                            <input type="text" id="institucion" name="institucion" placeholder="Nombre de su institución">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="correo@institucion.cl" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo de institución</label>
+                            <select id="tipo" name="tipo">
+                                <option value="">Seleccione...</option>
+                                <option value="gobierno_regional">Gobierno Regional</option>
+                                <option value="municipio">Municipio</option>
+                                <option value="corporacion_municipal">Corporación Municipal</option>
+                                <option value="servicio_publico">Servicio Público</option>
+                                <option value="asociacion_municipios">Asociación de Municipios</option>
+                                <option value="sector_privado">Sector Privado</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">¿Cuál es su desafío?</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Describa brevemente el desafío o necesidad que enfrenta su institución..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary form-submit">Enviar mensaje →</button>
+                        <p class="form-note">Le responderemos a la brevedad.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 CNV Asesorías · Consultoría en Estrategia de Intervención Pública</p>
+    </footer>
+
+    <script>
+        // Nav scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+            links.classList.toggle('open');
+        });
+        links.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => links.classList.remove('open'));
+        });
+
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
