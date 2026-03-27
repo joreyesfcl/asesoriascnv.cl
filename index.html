@@ -60,15 +60,9 @@
             display: flex; align-items: baseline; gap: 0.5rem;
             text-decoration: none;
         }
-        .nav-logo-cnv {
-            font-family: var(--font-body);
-            font-size: 1.5rem; font-weight: 700;
-            color: var(--white); letter-spacing: 0.04em;
-        }
-        .nav-logo-sub {
-            font-family: var(--font-body);
-            font-size: 0.75rem; font-weight: 600;
-            color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
+        .nav-logo img {
+            height: 36px;
+            width: auto;
         }
         .nav-links { display: flex; gap: 1.8rem; align-items: center; }
         .nav-links a {
@@ -640,8 +634,7 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <span class="nav-logo-cnv">CNV</span>
-                <span class="nav-logo-sub">Asesorías</span>
+                <img src="logo.png" alt="CNV Asesorías">
             </a>
             <div class="nav-links" id="navLinks">
                 <a href="#contexto">Contexto</a>
@@ -1164,6 +1157,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
+        <img src="logo.png" alt="CNV Asesorías" style="height: 32px; margin-bottom: 0.8rem; opacity: 0.6;">
         <p>© 2026 CNV Asesorías · Consultoría en Estrategia de Intervención Pública</p>
     </footer>
 
