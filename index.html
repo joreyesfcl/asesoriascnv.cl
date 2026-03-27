@@ -1109,8 +1109,8 @@
                 </div>
 
                 <div class="contact-form fade-in">
-                    <h3>Escríbanos</h3>
-                    <form action="https://formspree.io/f/mkopglrb" method="POST">
+                    <h3 id="formTitle">Escríbanos</h3>
+                    <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
@@ -1146,9 +1146,17 @@
                             <label for="mensaje">¿Cuál es su desafío?</label>
                             <textarea id="mensaje" name="mensaje" placeholder="Describa brevemente el desafío o necesidad que enfrenta su institución..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary form-submit">Enviar mensaje →</button>
+                        <button type="submit" class="btn-primary form-submit" id="formBtn">Enviar mensaje →</button>
                         <p class="form-note">Le responderemos a la brevedad.</p>
                     </form>
+                    <div id="formSuccess" style="display:none; text-align:center; padding: 3rem 1rem;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">✓</div>
+                        <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.8rem;">Mensaje enviado</h3>
+                        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.6;">Gracias por contactarnos. Le responderemos a la brevedad.</p>
+                    </div>
+                    <div id="formError" style="display:none; text-align:center; padding: 2rem 1rem;">
+                        <p style="font-size: 0.9rem; color: #e07050; line-height: 1.6;">Hubo un problema al enviar el mensaje. Por favor intente nuevamente o escríbanos directamente a <a href="mailto:contacto@asesoriascnv.cl" style="color: var(--gold-light);">contacto@asesoriascnv.cl</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1186,6 +1194,38 @@
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Contact form - submit without redirect
+        const form = document.getElementById('contactForm');
+        const btn = document.getElementById('formBtn');
+        const successMsg = document.getElementById('formSuccess');
+        const errorMsg = document.getElementById('formError');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+            errorMsg.style.display = 'none';
+
+            try {
+                const resp = await fetch('https://formspree.io/f/mkopglrb', {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (resp.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('formTitle').style.display = 'none';
+                    successMsg.style.display = 'block';
+                } else {
+                    throw new Error('Error en envío');
+                }
+            } catch (err) {
+                errorMsg.style.display = 'block';
+                btn.textContent = 'Enviar mensaje →';
+                btn.disabled = false;
+            }
+        });
     </script>
 </body>
 </html>
