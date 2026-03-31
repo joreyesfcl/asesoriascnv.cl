@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamara Van Hemelryck · CNV Asesorías</title>
-    <meta name="description" content="Tamara Van Hemelryck — Socia CNV. Más de 14 años de experiencia en el sector público, con trayectoria en evidencia y análisis aplicado para políticas sociales.">
+    <title>Tamara Van Hemelryck Kimelman · CNV Asesorías</title>
+    <meta name="description" content="Tamara Van Hemelryck Kimelman — Socia CNV. Más de 14 años de experiencia en el sector público, con trayectoria en evidencia y análisis aplicado para políticas sociales.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -35,11 +35,12 @@
         .nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
         .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0.8rem 2rem; }
         .nav-logo { display: flex; align-items: baseline; gap: 0.5rem; text-decoration: none; }
-        .nav-logo-cnv { font-family: var(--font-body); font-size: 1.5rem; font-weight: 700; color: var(--white); letter-spacing: 0.04em; }
-        .nav-logo-sub { font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
-        .nav-links { display: flex; gap: 1.8rem; align-items: center; list-style: none; }
-        .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; transition: color 0.3s; }
+        .nav-logo img { height: 36px; width: auto; }
+        .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.02em; transition: color 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .nav-cta { background: var(--gold) !important; color: var(--navy-deep) !important; padding: 0.5rem 1.2rem !important; border-radius: 4px; font-weight: 600 !important; font-size: 0.82rem !important; letter-spacing: 0.03em; transition: background 0.2s !important; }
+        .nav-cta:hover { background: var(--gold-light) !important; }
         .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
         .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; transition: 0.3s; }
 
@@ -105,15 +106,16 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="../index.html" class="nav-logo">
-                <span class="nav-logo-cnv">CNV</span>
-                <span class="nav-logo-sub">Asesorías</span>
+                <img src="../logo.png" alt="CNV Asesorías">
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../index.html#servicios">Servicios</a></li>
-                <li><a href="../nosotros.html" class="active">Nosotros</a></li>
-                <li><a href="../index.html#contacto">Contacto</a></li>
-            </ul>
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html#contexto">Contexto</a>
+                <a href="../nosotros.html" class="active">Nosotros</a>
+                <a href="../index.html#servicios">Servicios</a>
+                <a href="../index.html#diferenciadores">Por qué CNV</a>
+                <a href="../index.html#escenarios">Casos</a>
+                <a href="../index.html#contacto" class="nav-cta">Conversemos</a>
+            </div>
             <button class="nav-toggle" id="navToggle" aria-label="Menú">
                 <span></span><span></span><span></span>
             </button>
@@ -145,7 +147,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     Volver al equipo
                 </a>
-                <h1 class="profile-name">Tamara Van Hemelryck</h1>
+                <h1 class="profile-name">Tamara Van Hemelryck Kimelman</h1>
                 <p class="profile-role">Socia CNV</p>
                 <div class="profile-divider"></div>
                 <div class="profile-bio fade-in">
