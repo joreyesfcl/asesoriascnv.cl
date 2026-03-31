@@ -308,7 +308,9 @@
         .pillars-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
         }
-        .pillar-col {}
+        .pillar-col {
+            display: flex; flex-direction: column; height: 100%;
+        }
         .pillar-header {
             background: var(--navy-deep);
             color: var(--white);
@@ -329,6 +331,7 @@
             border-top: none;
             border-radius: 0 0 8px 8px;
             padding: 1.5rem;
+            flex: 1; display: flex; flex-direction: column;
         }
         .service-item {
             display: flex; align-items: flex-start; gap: 0.75rem;
@@ -345,7 +348,7 @@
             font-size: 0.9rem; color: var(--text-body); line-height: 1.5;
         }
         .pillar-question {
-            margin-top: 1.2rem; padding-top: 1rem;
+            margin-top: auto; padding-top: 1rem;
             border-top: 1px solid var(--border-light);
             font-style: italic; font-family: var(--font-display);
             font-size: 0.95rem; color: var(--teal);
@@ -380,7 +383,7 @@
         /* ── SCENARIOS ── */
         .scenarios { background: var(--light-bg); }
         .scenario-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem;
         }
         .scenario-card {
             background: var(--white);
@@ -656,10 +659,10 @@
     <section class="hero" id="inicio">
         <div class="hero-inner">
             <div class="hero-left">
-                <div class="hero-badge">Inteligencia aplicada a la intervención</div>
+                <div class="hero-badge">Inteligencia aplicada a la acción</div>
                 <h1>Mejores decisiones <em>de intervención.</em></h1>
                 <p class="hero-desc">
-                    Acompañamos a instituciones públicas, empresas y organizaciones a tomar mejores decisiones de intervención, con evidencia, rigor técnico y comprensión del territorio.
+                    Acompañamos a instituciones públicas, empresas y organizaciones a tomar mejores decisiones y estrategias de intervención, con evidencia, rigor técnico y comprensión del territorio.
                 </p>
                 <div class="hero-ctas">
                     <a href="#contacto" class="btn-primary">Conversemos →</a>
@@ -673,11 +676,11 @@
                 </div>
                 <div class="hero-stat">
                     <div class="hero-stat-icon">Intervenciones más viables</div>
-                    <div class="hero-stat-text">Diseñamos y formulamos iniciativas que cumplen con las exigencias del sistema público y que responden a los estándares que el sector privado necesita demostrar.</div>
+                    <div class="hero-stat-text">Diseñamos y formulamos acciones que cumplen con las exigencias del sistema público y que responden a los estándares que el sector privado necesita demostrar.</div>
                 </div>
                 <div class="hero-stat">
                     <div class="hero-stat-icon">Carteras articuladas</div>
-                    <div class="hero-stat-text">Organizamos las iniciativas de su organización como un sistema coherente: con priorización, secuencia y estrategia de financiamiento integrada.</div>
+                    <div class="hero-stat-text">Establecemos las acciones de tu organización como un sistema coherente: con priorización, secuencia y estrategia de financiamiento integrada.</div>
                 </div>
                 <div class="hero-stat">
                     <div class="hero-stat-icon">Resultados demostrables</div>
@@ -692,7 +695,7 @@
         <div class="section-inner">
             <div class="section-label fade-in">El contexto que enfrentan nuestros clientes</div>
             <h2 class="section-title fade-in">Intervenir con inteligencia es cada vez más necesario — y más exigente</h2>
-            <p class="section-subtitle fade-in">Instituciones públicas y empresas enfrentan hoy desafíos crecientes al momento de gestionar intervenciones que afectan a personas, comunidades y territorios. Estos desafíos no reflejan falta de compromiso, sino la complejidad de un entorno que demanda respuestas cada vez más rigurosas, articuladas y respaldadas técnicamente.</p>
+            <p class="section-subtitle fade-in">Instituciones públicas, gobiernos regionales, municipios y empresas enfrentan hoy desafíos crecientes al momento de gestionar intervenciones que afectan a personas, comunidades y territorios. Estos desafíos no reflejan falta de compromiso, sino la complejidad de un entorno que demanda respuestas cada vez más rigurosas, articuladas y respaldadas técnicamente.</p>
             <div class="context-grid">
                 <div class="context-card fade-in">
                     <div class="context-card-icon">📋</div>
@@ -707,12 +710,12 @@
                 <div class="context-card fade-in">
                     <div class="context-card-icon">🔗</div>
                     <h3>Iniciativas desarticuladas</h3>
-                    <p>Programas, proyectos e inversiones gestionados de forma independiente generan duplicidades, vacíos de atención y oportunidades desaprovechadas — tanto dentro de una organización como entre actores públicos y privados del mismo territorio.</p>
+                    <p>Programas, proyectos y acciones gestionadas de forma independiente generan duplicidades, vacíos de atención y oportunidades desaprovechadas — tanto dentro de una organización como entre actores públicos y privados del mismo territorio.</p>
                 </div>
                 <div class="context-card fade-in">
                     <div class="context-card-icon">💰</div>
                     <h3>Financiamiento sin estrategia</h3>
-                    <p>Abordar cada iniciativa de forma aislada, sin una visión de cartera ni una estrategia que articule las fuentes disponibles — públicas, privadas o mixtas —, impide optimizar los recursos y maximizar el alcance de las intervenciones.</p>
+                    <p>Abordar cada acción de forma aislada, sin una visión de cartera ni una estrategia que articule las fuentes disponibles — públicas, privadas o mixtas —, impide optimizar los recursos y maximizar el alcance de dichas intervenciones.</p>
                 </div>
                 <div class="context-card fade-in">
                     <div class="context-card-icon">📊</div>
@@ -722,7 +725,7 @@
                 <div class="context-card fade-in">
                     <div class="context-card-icon">🌐</div>
                     <h3>Brechas entre lo público y lo privado</h3>
-                    <p>Cuando actores públicos y privados operan sobre un mismo territorio sin coordinación ni lenguaje común, el potencial de articulación se pierde. Construir soluciones compartidas requiere un interlocutor que comprenda ambas lógicas.</p>
+                    <p>Cuando actores públicos y privados operan sobre un mismo territorio sin coordinación ni lenguaje común, el potencial de articulación se pierde. Construir soluciones compartidas requiere un interlocutor que comprenda e interprete ambas lógicas.</p>
                 </div>
             </div>
             <div class="context-footer fade-in">
@@ -738,17 +741,17 @@
                 <div class="about-text fade-in">
                     <div class="section-label">Quiénes somos</div>
                     <h2 class="section-title">Nacimos desde adentro del sistema.</h2>
-                    <p class="highlight">Conocemos el SNI y el SME porque los hemos operado. Y esa experiencia es igual de valiosa para quienes operan fuera del sistema pero interactúan con él — o quieren aplicar su rigurosidad a sus propias decisiones.</p>
-                    <p>CNV fue fundada por profesionales con formación en ingeniería, economía y estadística, con experiencia directa en la formulación, evaluación y gestión de programas e iniciativas de inversión dentro del sistema público chileno.</p>
+                    <p class="highlight">Conocemos los sistemas de evaluación de programas e inversiones públicas porque los hemos operado. Y esa experiencia es igual de valiosa para quienes operan fuera del sistema pero interactúan con él — o quieren aplicar su rigurosidad a sus propias decisiones.</p>
+                    <p>CNV fue fundada por profesionales con formación en ingeniería, matemática, economía y estadística, con experiencia directa en la formulación, evaluación y gestión de programas públicos e iniciativas de inversión dentro del sistema público chileno.</p>
                     <p>Hemos trabajado en las instituciones que definen las reglas del sistema, lo que nos permite entender no solo qué se exige, sino por qué se exige y cómo cumplirlo con la mayor solidez técnica. Ese conocimiento es igualmente valioso para empresas que necesitan navegar el sistema público, anticipar sus exigencias o aplicar estándares equivalentes de rigurosidad a sus intervenciones sociales y ambientales.</p>
-                    <p>Ponemos ese conocimiento al servicio de instituciones públicas, empresas y organizaciones, apoyando a sus equipos en uno de sus desafíos más complejos: transformar recursos en intervenciones sólidas, pertinentes y con efectos reales en las personas, las comunidades y los territorios.</p>
+                    <p>Ponemos ese conocimiento al servicio de instituciones públicas, empresas y organizaciones, apoyando a los equipos en uno de sus desafíos más complejos: transformar recursos en intervenciones sólidas, pertinentes y con efectos reales en las personas, las comunidades y los territorios.</p>
                     <p style="margin-top: 1rem;"><a href="nosotros.html" style="color: var(--teal); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--teal); padding-bottom: 2px;">Conocer al equipo →</a></p>
                 </div>
                 <div class="about-pillars fade-in">
                     <div class="about-pillar">
                         <div class="about-pillar-label">Origen</div>
                         <h4>Experiencia desde dentro</h4>
-                        <p>Trayectoria en las instituciones que administran el SNI y el SME, formulando, evaluando y resolviendo.</p>
+                        <p>Trayectoria en las instituciones que administran el Sistema Nacional de Inversiones y el Sistema de Monitoreo y Evaluación, formulando, evaluando y resolviendo.</p>
                     </div>
                     <div class="about-pillar">
                         <div class="about-pillar-label">Formación</div>
@@ -757,13 +760,13 @@
                     </div>
                     <div class="about-pillar">
                         <div class="about-pillar-label">Enfoque</div>
-                        <h4>Integración público-privada</h4>
-                        <p>Articulamos diagnóstico, diseño, evaluación e inversión bajo una misma lógica, aplicable tanto al sector público como al privado.</p>
+                        <h4>Integración al territorio</h4>
+                        <p>Articulamos diagnóstico, diseño, evaluación e inversión para que responda al territorio, aplicable tanto al sector público como al privado.</p>
                     </div>
                     <div class="about-pillar">
                         <div class="about-pillar-label">Compromiso</div>
-                        <h4>Su posición, no solo el entregable</h4>
-                        <p>Cada trabajo termina con su organización en mejor posición para decidir, intervenir y demostrar resultados.</p>
+                        <h4>Tu posición, no solo el entregable</h4>
+                        <p>Cada trabajo termina con tu organización en mejor posición para decidir, intervenir y demostrar resultados.</p>
                     </div>
                 </div>
             </div>
@@ -775,7 +778,7 @@
         <div class="section-inner">
             <div class="section-label section-label-light fade-in">Propuesta de valor</div>
             <h2 class="section-title section-title-light fade-in">Acompañamos a organizaciones públicas y privadas a tomar mejores decisiones de intervención</h2>
-            <p class="section-subtitle section-subtitle-light fade-in">Sea una institución pública que gestiona recursos fiscales o una empresa que invierte en su entorno y sus comunidades, existen desafíos comunes: diagnosticar con profundidad, diseñar con pertinencia, evaluar con rigor y demostrar resultados con evidencia. Nuestra propuesta se construye sobre esa convergencia.</p>
+            <p class="section-subtitle section-subtitle-light fade-in">Sea una institución pública que gestiona recursos fiscales o una empresa que invierte en su entorno y sus comunidades, existen desafíos comunes: diagnosticar con profundidad, diseñar con pertinencia, evaluar con rigor y demostrar resultados con evidencia. Nuestra propuesta se construye sobre esa convergencia y en función de las particularidades de cada sector.</p>
             <div class="value-grid">
                 <div class="value-card fade-in">
                     <div class="value-card-icon">🎯</div>
@@ -790,7 +793,7 @@
                 <div class="value-card fade-in">
                     <div class="value-card-icon">📊</div>
                     <h3>Carteras articuladas y financiables</h3>
-                    <p>Organizamos las iniciativas como un sistema interdependiente — con priorización, secuencia y una estrategia de financiamiento que articula fuentes públicas, privadas y multilaterales.</p>
+                    <p>Organizamos las acciones como un sistema interdependiente — con priorización, secuencia y una estrategia de financiamiento que articula fuentes públicas, privadas y multilaterales.</p>
                 </div>
                 <div class="value-card fade-in">
                     <div class="value-card-icon">✅</div>
@@ -847,9 +850,9 @@
                     </div>
                     <div class="pillar-body">
                         <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Evaluación de programas e intervenciones</span></div>
-                        <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Resolución de observaciones del SNI</span></div>
-                        <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Contraparte técnica de estudios</span></div>
-                        <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Diseño de estrategias de financiamiento público, privado y mixto</span></div>
+                        <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Resolución de observaciones en los sistemas de evaluación</span></div>
+                        <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Elaboración de bases y contraparte técnica de estudios</span></div>
+                        <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Diseño óptimo de estrategias de financiamiento público, privado y mixto</span></div>
                         <div class="service-item"><div class="service-dot"></div><span class="service-item-text">Sistemas de seguimiento, monitoreo y gestión con indicadores multidimensionales</span></div>
                         <div class="pillar-question">¿Cómo hacer que las intervenciones avancen, se financien y demuestren resultados?</div>
                     </div>
@@ -862,10 +865,10 @@
     <section class="section" id="diferenciadores">
         <div class="section-inner">
             <div class="section-label fade-in">Qué nos diferencia</div>
-            <h2 class="section-title fade-in">La combinación que no encontrará replicada en otra consultora</h2>
+            <h2 class="section-title fade-in">Una combinación única que no encontrarás replicada en el mercado</h2>
             <p class="section-subtitle fade-in">En un mercado donde diversas consultoras ofrecen servicios de formulación, diseño de programas o asesoría en sostenibilidad, lo que distingue a CNV es una combinación de atributos que, en conjunto, configuran una propuesta única.</p>
             <div class="diff-list">
-                <div class="diff-item fade-in"><div class="diff-number">01</div><div class="diff-content"><h3>Conocimiento del sistema desde adentro</h3><p>Hemos operado el SNI y el SME. Sabemos lo que se exige, por qué se exige y cómo cumplirlo con solidez técnica. Eso nos convierte también en el socio ideal para empresas que necesitan navegar el sistema público o aplicar su rigurosidad a sus propias intervenciones.</p></div></div>
+                <div class="diff-item fade-in"><div class="diff-number">01</div><div class="diff-content"><h3>Conocimiento del sistema desde adentro</h3><p>Hemos operado el Sistema Nacional de Inversiones y el Sistema de Monitoreo y Evaluación. Sabemos lo que se exige, por qué se exige y cómo cumplirlo con solidez técnica. Eso nos convierte también en el socio ideal para empresas que necesitan navegar el sistema público o aplicar su rigurosidad a sus propias intervenciones.</p></div></div>
                 <div class="diff-item fade-in"><div class="diff-number">02</div><div class="diff-content"><h3>Programas e inversión bajo una misma lógica</h3><p>Cubrimos el ciclo completo con una mirada integrada. Cuando un territorio enfrenta desafíos complejos, la respuesta suele requerir una combinación articulada de programas e inversión — sea desde el sector público, el privado o ambos.</p></div></div>
                 <div class="diff-item fade-in"><div class="diff-number">03</div><div class="diff-content"><h3>Enfoque de cartera como sistema</h3><p>Entendemos las iniciativas de una organización como un portafolio interdependiente que debe priorizarse, secuenciarse y articularse con una estrategia de financiamiento, maximizando el impacto colectivo de los recursos invertidos.</p></div></div>
                 <div class="diff-item fade-in"><div class="diff-number">04</div><div class="diff-content"><h3>Análisis territorial basado en datos</h3><p>Diagnósticos construidos con evidencia específica del territorio — en sus dimensiones humana, social, productiva y ambiental —, no respuestas genéricas ni aproximaciones descriptivas.</p></div></div>
@@ -884,16 +887,32 @@
             <div class="scenario-grid">
                 <div class="scenario-card fade-in">
                     <div class="scenario-card-header">
-                        <div class="scenario-type">Gobierno Regional</div>
-                        <h3>Cartera de proyectos con observaciones SNI pendientes</h3>
+                        <div class="scenario-type">Institución pública</div>
+                        <h3>Cartera de proyectos con observaciones pendientes en el Sistema Nacional de Inversiones</h3>
                     </div>
                     <div class="scenario-card-body">
                         <div class="scenario-label">Situación</div>
-                        <p>Iniciativas estancadas con observaciones de distinta naturaleza — equipo técnico desbordado por múltiples responsabilidades simultáneas.</p>
+                        <p>Acciones de inversión estancadas con observaciones de distinta naturaleza — equipo técnico desbordado por múltiples responsabilidades simultáneas.</p>
                         <div class="scenario-label">Intervención CNV</div>
-                        <p>Subsanación de observaciones → Pre-evaluación de nuevas postulaciones → Cartera priorizada para CORE</p>
+                        <p>Subsanación de observaciones → Pre-evaluación de nuevas postulaciones → Cartera priorizada</p>
                         <div class="scenario-result">
-                            <p>Iniciativas retoman avance hacia la Recomendación Satisfactoria; nuevas formulaciones ingresan con mayor solidez técnica. Cartera ordenada con estrategia de financiamiento.</p>
+                            <p>Las acciones retoman avance hacia la Recomendación Satisfactoria; nuevas formulaciones ingresan con mayor solidez técnica. Cartera ordenada con estrategia de financiamiento.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scenario-card fade-in">
+                    <div class="scenario-card-header">
+                        <div class="scenario-type">Municipio</div>
+                        <h3>Diseño de un programa social para abordar una problemática creciente en el territorio</h3>
+                    </div>
+                    <div class="scenario-card-body">
+                        <div class="scenario-label">Situación</div>
+                        <p>El municipio identifica una problemática social que no cuenta con un programa estructurado. Las respuestas actuales son acciones dispersas, sin teoría de cambio, sin indicadores y sin la consistencia que el Sistema de Monitoreo y Evaluación requiere.</p>
+                        <div class="scenario-label">Intervención CNV</div>
+                        <p>Diagnóstico de la problemática → Diseño del programa (teoría de cambio, marco lógico, focalización, indicadores) → Preparación de antecedentes para ingreso al sistema</p>
+                        <div class="scenario-result">
+                            <p>Programa con diseño técnicamente robusto, evaluable y defendible, listo para implementarse y con capacidad de demostrar resultados.</p>
                         </div>
                     </div>
                 </div>
@@ -901,11 +920,11 @@
                 <div class="scenario-card fade-in">
                     <div class="scenario-card-header">
                         <div class="scenario-type">Empresa del sector energía / minería</div>
-                        <h3>Inversión social y compromisos ambientales gestionados sin estrategia integral</h3>
+                        <h3>Inversión social y compromisos regulatorios gestionados sin estrategia integral</h3>
                     </div>
                     <div class="scenario-card-body">
                         <div class="scenario-label">Situación</div>
-                        <p>La empresa cumple compromisos RCA e invierte en RSE, pero sin diagnóstico territorial riguroso, sin articulación entre iniciativas y sin capacidad de medir efectos en las dimensiones humana, social y ambiental.</p>
+                        <p>La empresa cumple compromisos RCA e invierte en programas de RSE, pero estas acciones se gestionan de forma aislada, sin diagnóstico territorial riguroso, sin articulación entre ellas y sin capacidad de medir sus efectos en las distintas dimensiones.</p>
                         <div class="scenario-label">Intervención CNV</div>
                         <p>Diagnóstico socioterritorial → Evaluación de intervenciones vigentes → Cartera articulada → Monitoreo multidimensional</p>
                         <div class="scenario-result">
@@ -921,7 +940,7 @@
                     </div>
                     <div class="scenario-card-body">
                         <div class="scenario-label">Situación</div>
-                        <p>Un gobierno regional y una empresa comparten objetivos de desarrollo territorial pero carecen de un marco técnico común. Cada actor planifica por separado, generando duplicidades.</p>
+                        <p>Un gobierno regional y una empresa que opera en la zona comparten objetivos de desarrollo territorial pero carecen de un marco técnico común. Cada actor planifica por separado, generando duplicidades.</p>
                         <div class="scenario-label">Intervención CNV</div>
                         <p>Diagnóstico compartido → Sinergias → Cartera conjunta → Financiamiento mixto → Monitoreo articulado</p>
                         <div class="scenario-result">
@@ -966,7 +985,7 @@
                 <div class="mod-card fade-in"><div class="mod-icon">🔄</div><h4>Asesoría integral</h4><p>Acompañamiento del ciclo completo de iniciativas, encadenando servicios en una secuencia planificada y adaptada al contexto del contratante.</p></div>
                 <div class="mod-card fade-in"><div class="mod-icon">🔍</div><h4>Contraparte técnica</h4><p>Supervisión de estudios contratados a terceros, asegurando calidad metodológica y consistencia con las exigencias aplicables.</p></div>
                 <div class="mod-card fade-in"><div class="mod-icon">🤝</div><h4>Apoyo a equipos</h4><p>Trabajo colaborativo que transfiere capacidades a los equipos técnicos del contratante durante la ejecución del mandato.</p></div>
-                <div class="mod-card fade-in"><div class="mod-icon">🎓</div><h4>Talleres de capacitación</h4><p>Fortalecimiento de capacidades en formulación, evaluación de inversión social, monitoreo y herramientas del SNI.</p></div>
+                <div class="mod-card fade-in"><div class="mod-icon">🎓</div><h4>Talleres de capacitación</h4><p>Fortalecimiento de capacidades en formulación, evaluación de inversión social, monitoreo y herramientas del Sistema Nacional de Inversiones.</p></div>
                 <div class="mod-card fade-in"><div class="mod-icon">🎤</div><h4>Presentación de resultados</h4><p>Apoyo para comunicar propuestas y resultados ante autoridades, directorios, concejos, consejos regionales y comunidades.</p></div>
             </div>
         </div>
@@ -980,8 +999,8 @@
                     <div class="section-label section-label-light">Contáctenos</div>
                     <h2 class="section-title section-title-light">La invitación es simple.</h2>
                     <div class="contact-quote">Conversemos.</div>
-                    <p>Si su organización enfrenta alguno de los desafíos que describimos — o quiere explorar cómo fortalecer la calidad técnica de sus decisiones de intervención — el paso siguiente es fácil.</p>
-                    <p style="font-style: italic; color: var(--gold-light);">Cuéntenos cuál es su desafío más complejo.</p>
+                    <p>Si tu organización enfrenta alguno de los desafíos que describimos — o quiere explorar cómo fortalecer la calidad técnica de sus decisiones de intervención — el paso siguiente es fácil.</p>
+                    <p style="font-style: italic; color: var(--gold-light);">Cuéntanos cuál es tu desafío más complejo.</p>
 
                     <div class="contact-info">
                         <a href="mailto:contacto@asesoriascnv.cl">
@@ -996,25 +1015,25 @@
                 </div>
 
                 <div class="contact-form fade-in">
-                    <h3 id="formTitle">Escríbanos</h3>
+                    <h3 id="formTitle">Escríbenos</h3>
                     <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Su nombre" required>
+                                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                             </div>
                             <div class="form-group">
                                 <label for="cargo">Cargo</label>
-                                <input type="text" id="cargo" name="cargo" placeholder="Su cargo">
+                                <input type="text" id="cargo" name="cargo" placeholder="Tu cargo">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="institucion">Institución</label>
-                            <input type="text" id="institucion" name="institucion" placeholder="Nombre de su institución">
+                            <label for="institucion">Organización</label>
+                            <input type="text" id="institucion" name="institucion" placeholder="Nombre de tu organización">
                         </div>
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="correo@institucion.cl" required>
+                            <input type="email" id="email" name="email" placeholder="correo@organizacion.cl" required>
                         </div>
                         <div class="form-group">
                             <label for="tipo">Tipo de organización</label>
@@ -1033,16 +1052,16 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="mensaje">¿Cuál es su desafío?</label>
-                            <textarea id="mensaje" name="mensaje" placeholder="Describa brevemente el desafío o necesidad que enfrenta su institución..." required></textarea>
+                            <label for="mensaje">¿Cuál es tu desafío?</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente el desafío o necesidad que enfrenta tu organización..." required></textarea>
                         </div>
                         <button type="submit" class="btn-primary form-submit" id="formBtn">Enviar mensaje →</button>
-                        <p class="form-note">Le responderemos a la brevedad.</p>
+                        <p class="form-note">Te responderemos a la brevedad.</p>
                     </form>
                     <div id="formSuccess" style="display:none; text-align:center; padding: 3rem 1rem;">
                         <div style="font-size: 2.5rem; margin-bottom: 1rem;">✓</div>
                         <h3 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.8rem;">Mensaje enviado</h3>
-                        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.6;">Gracias por contactarnos. Le responderemos a la brevedad.</p>
+                        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.6;">Gracias por contactarnos. Te responderemos a la brevedad.</p>
                     </div>
                     <div id="formError" style="display:none; text-align:center; padding: 2rem 1rem;">
                         <p style="font-size: 0.9rem; color: #e07050; line-height: 1.6;">Hubo un problema al enviar el mensaje. Por favor intente nuevamente o escríbanos directamente a <a href="mailto:contacto@asesoriascnv.cl" style="color: var(--gold-light);">contacto@asesoriascnv.cl</a></p>
