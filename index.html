@@ -14,13 +14,13 @@
             --navy:      #0f2d52;
             --navy-mid:  #1b3a5c;
             --navy-dark: #1a1a2e;
-            --gold:      #b8a06e;
-            --gold-lt:   #cdb990;
-            --bg:        #faf8f4;
-            --light-bg:  #f0ece5;
-            --card-bg:   #f5f2ed;
-            --text:      #1a1a2e;
-            --muted:     #6b7a8d;
+            --gold:      #c28828;
+            --gold-lt:   #daa83c;
+            --bg:        #f5f6f4;
+            --light-bg:  #e8ebe5;
+            --card-bg:   #eef0ec;
+            --text:      #111827;
+            --muted:     #3d5166;
             --white:     #ffffff;
             --teal:      #1f6f78;
             --green:     #1f7048;
@@ -94,6 +94,16 @@
         /* Sidebar layout */
         .sidebar-nav { display: flex; flex-direction: column; align-items: stretch; flex: 1; width: 100%; }
         .sidebar-bottom { width: 100%; border-top: 1px solid rgba(255,255,255,.06); padding-top: .4rem; }
+        .sidebar-bottom .nav-item {
+            background: var(--gold);
+            color: var(--navy);
+            margin: .3rem .5rem;
+            width: calc(100% - 1rem);
+            border-radius: 6px;
+            padding: .7rem 0;
+        }
+        .sidebar-bottom .nav-item:hover { background: var(--gold-lt); color: var(--navy); }
+        .sidebar-bottom .nav-item.active { background: var(--gold-lt); color: var(--navy); }
 
         /* Tooltip */
         .nav-tooltip {
@@ -182,11 +192,11 @@
             text-transform: uppercase; color: var(--gold); margin-bottom: 1.8rem;
         }
         .hero-badge::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
-        .hero h1 {
+        h1.hero {
             font-family: var(--font-d); font-size: clamp(2.4rem,4.5vw,3.6rem);
             font-weight: 600; line-height: 1.15; color: var(--white); margin-bottom: 1.4rem;
         }
-        .hero h1 em { font-style: italic; color: var(--gold-lt); }
+        h1.hero em { font-style: italic; color: var(--gold-lt); }
         .hero-desc {
             font-size: 1.05rem; line-height: 1.75;
             color: rgba(255,255,255,.72); max-width: 480px; margin-bottom: 2.2rem;
