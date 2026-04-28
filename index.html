@@ -27,7 +27,7 @@
             --border:    rgba(15,45,82,0.12);
             --font-d:    'Cormorant Garamond', Georgia, serif;
             --font-b:    'Source Sans 3', 'Segoe UI', Calibri, sans-serif;
-            --sw:        64px;   /* sidebar width */
+            --sw:        72px;   /* sidebar width */
             --mnh:       56px;   /* mobile nav height */
         }
 
@@ -50,6 +50,7 @@
             z-index: 200;
             display: flex; flex-direction: column; align-items: center;
             padding: 1.2rem 0 0.8rem;
+            box-shadow: 3px 0 18px rgba(0,0,0,.55);
         }
         .content-area {
             margin-left: var(--sw);
@@ -97,9 +98,9 @@
         .sidebar-bottom .nav-item {
             background: var(--gold);
             color: var(--navy);
-            margin: .3rem .5rem;
-            width: calc(100% - 1rem);
-            border-radius: 6px;
+            margin: .3rem 0;
+            width: 100%;
+            border-radius: 0;
             padding: .7rem 0;
         }
         .sidebar-bottom .nav-item:hover { background: var(--gold-lt); color: var(--navy); }
@@ -169,7 +170,7 @@
         /* ── S1 HERO ── */
         #inicio {
             min-height: 100vh;
-            background: linear-gradient(135deg,rgba(15,45,82,.95) 0%,rgba(26,26,46,.9) 45%,rgba(27,58,92,.88) 100%);
+            background: linear-gradient(135deg,#060c16 0%,#0a1827 35%,#0c2040 65%,#0e2848 100%);
             align-items: center; position: relative; overflow: hidden;
         }
         #inicio::before {
