@@ -114,11 +114,12 @@
         }
         .mobile-nav-inner { display: flex; height: 100%; }
         .mobile-nav .nav-item {
-            flex: 1; padding: .4rem 0; height: 100%; border-radius: 0;
+            flex: 1; padding: .28rem 0; height: 100%; border-radius: 0;
             border-top: 2px solid transparent;
         }
         .mobile-nav .nav-item.active { border-top-color: var(--gold); background: none; color: var(--gold); }
-        .mobile-nav .nav-label { font-size: 9px; }
+        .mobile-nav .nav-item svg { width: 14px; height: 14px; }
+        .mobile-nav .nav-label { font-size: 7.5px; }
         .mobile-nav .nav-tooltip { display: none; }
 
         /* ── PAGE CONTENT ── */
@@ -286,10 +287,15 @@
             <span class="nav-label">Servicios</span>
             <div class="nav-tooltip">Servicios</div>
         </a>
-        <a class="nav-item active" href="../index.html#porque-cnv" aria-label="Por qué CNV" aria-current="page">
+        <a class="nav-item" href="../index.html#porque-cnv" aria-label="Por qué CNV">
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span class="nav-label">Por qué CNV</span>
             <div class="nav-tooltip">Por qué CNV</div>
+        </a>
+        <a class="nav-item active" href="../index.html#nosotros" aria-label="Nosotros" aria-current="page">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="nav-label">Nosotros</span>
+            <div class="nav-tooltip">Nosotros</div>
         </a>
     </div>
     <div class="sidebar-bottom">
@@ -316,9 +322,13 @@
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
             <span class="nav-label">Servicios</span>
         </a>
-        <a class="nav-item active" href="../index.html#porque-cnv" aria-label="Por qué CNV">
+        <a class="nav-item" href="../index.html#porque-cnv" aria-label="Por qué CNV">
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span class="nav-label">Por qué CNV</span>
+        </a>
+        <a class="nav-item active" href="../index.html#nosotros" aria-label="Nosotros">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="nav-label">Nosotros</span>
         </a>
         <a class="nav-item" href="../index.html#conversemos" aria-label="Conversemos">
             <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -351,7 +361,7 @@
             </aside>
 
             <div class="profile-main">
-                <a href="../index.html#porque-cnv" class="profile-back">
+                <a href="../index.html#nosotros" class="profile-back">
                     <svg viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
                     Volver al equipo
                 </a>

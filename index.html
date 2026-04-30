@@ -131,11 +131,12 @@
         }
         .mobile-nav-inner { display: flex; height: 100%; }
         .mobile-nav .nav-item {
-            flex: 1; padding: .4rem 0; height: 100%; border-radius: 0;
+            flex: 1; padding: .28rem 0; height: 100%; border-radius: 0;
             border-top: 2px solid transparent;
         }
         .mobile-nav .nav-item.active { border-top-color: var(--gold); background: none; }
-        .mobile-nav .nav-label { font-size: 9px; }
+        .mobile-nav .nav-item svg { width: 14px; height: 14px; }
+        .mobile-nav .nav-label { font-size: 7.5px; }
         .mobile-nav .nav-tooltip { display: none; }
 
         /* ── SECTION PANELS ── */
@@ -476,6 +477,11 @@
             <span class="nav-label">Por qué CNV</span>
             <div class="nav-tooltip">Por qué CNV</div>
         </button>
+        <button class="nav-item" data-section="nosotros" aria-label="Nosotros">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="nav-label">Nosotros</span>
+            <div class="nav-tooltip">Nosotros</div>
+        </button>
     </div>
     <div class="sidebar-bottom">
         <button class="nav-item" data-section="conversemos" aria-label="Conversemos">
@@ -506,6 +512,10 @@
         <button class="nav-item" data-section="porque-cnv" aria-label="Por qué CNV">
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span class="nav-label">Por qué CNV</span>
+        </button>
+        <button class="nav-item" data-section="nosotros" aria-label="Nosotros">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="nav-label">Nosotros</span>
         </button>
         <button class="nav-item" data-section="conversemos" aria-label="Conversemos">
             <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
@@ -895,11 +905,18 @@
         </div>
     </div>
 
-    <!-- Equipo -->
+
+</section>
+
+<!-- ─────────────────────────────────────
+     S5 — NOSOTROS
+───────────────────────────────────── -->
+<section id="nosotros" class="section-panel" role="region" aria-label="Nosotros">
+
     <div class="sub-block" style="background:var(--light-bg)">
         <div class="sub-block-inner">
             <span class="sec-label">Socios Fundadores</span>
-            <h3 style="font-family:var(--font-d);font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:600;color:var(--text);margin-bottom:2.5rem">Nuestro Equipo</h3>
+            <h2 class="sec-title">Nuestro Equipo</h2>
             <div class="team-grid">
 
                 <div class="partner-card">
@@ -975,7 +992,7 @@
 </section>
 
 <!-- ─────────────────────────────────────
-     S5 — CONVERSEMOS
+     S6 — CONVERSEMOS
 ───────────────────────────────────── -->
 <section id="conversemos" class="section-panel" role="region" aria-label="Conversemos">
 
@@ -1070,7 +1087,7 @@
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-    const VALID = ['inicio','propuesta','servicios','porque-cnv','conversemos'];
+    const VALID = ['inicio','propuesta','servicios','porque-cnv','nosotros','conversemos'];
     const area  = document.getElementById('contentArea');
 
     function switchTo(id) {
