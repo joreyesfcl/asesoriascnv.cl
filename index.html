@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asesorías CNV · Inteligencia aplicada a la intervención</title>
     <meta name="description" content="Acompañamos a instituciones públicas, empresas y organizaciones a tomar mejores decisiones de intervención, con evidencia, rigor técnico y comprensión del territorio.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     <style>
         /* ── VARIABLES ── */
         :root {
-            --navy:      #0f2d52;
-            --navy-mid:  #1b3a5c;
-            --navy-dark: #1a1a2e;
-            --gold:      #c28828;
-            --gold-lt:   #daa83c;
-            --bg:        #f5f6f4;
-            --light-bg:  #e8ebe5;
-            --card-bg:   #eef0ec;
-            --text:      #111827;
-            --muted:     #3d5166;
+            --navy:      #071C38;
+            --navy-mid:  #071C38;
+            --navy-dark: #071C38;
+            --cobalt:    #165DFF;
+            --cyan:      #3FD7FF;
+            --gold:      #165DFF;
+            --gold-lt:   #3FD7FF;
+            --snow:      #F8FBFF;
+            --bg:        #F8FBFF;
+            --light-bg:  #F8FBFF;
+            --card-bg:   #F8FBFF;
+            --slate:     #536A86;
+            --dark-text: #0C1B2A;
+            --text:      #0C1B2A;
+            --muted:     #536A86;
             --white:     #ffffff;
-            --teal:      #1f6f78;
-            --green:     #1f7048;
-            --border:    rgba(15,45,82,0.12);
-            --font-d:    'Cormorant Garamond', Georgia, serif;
-            --font-b:    'Source Sans 3', 'Segoe UI', Calibri, sans-serif;
-            --sw:        72px;   /* sidebar width */
-            --mnh:       56px;   /* mobile nav height */
+            --light-ice: #EAF6FF;
+            --soft-blue: #B9CEE8;
+            --teal:      #3FD7FF;
+            --green:     #165DFF;
+            --border:    rgba(22,93,255,0.12);
+            --font-d:    'Aptos Display', Calibri, 'Segoe UI', sans-serif;
+            --font-b:    'Aptos', Calibri, 'Segoe UI', sans-serif;
+            --sw:        72px;
+            --mnh:       56px;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -79,7 +83,7 @@
             text-decoration: none; font-family: var(--font-b);
         }
         .nav-item:hover  { color: rgba(255,255,255,.75); background: rgba(255,255,255,.04); }
-        .nav-item.active { color: var(--gold); background: rgba(184,160,110,.18); }
+        .nav-item.active { color: var(--cobalt); background: rgba(22,93,255,.18); }
         .nav-item svg {
             width: 16px; height: 16px;
             stroke: currentColor; fill: none;
@@ -90,7 +94,7 @@
             font-size: 7.5px; font-weight: 600;
             letter-spacing: .05em; text-transform: uppercase; line-height: 1;
         }
-        .nav-item:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+        .nav-item:focus-visible { outline: 2px solid var(--cobalt); outline-offset: -2px; }
 
         /* Sidebar layout */
         .sidebar-nav { display: flex; flex-direction: column; align-items: stretch; flex: 1; width: 100%; }
@@ -134,7 +138,7 @@
             flex: 1; padding: .28rem 0; height: 100%; border-radius: 0;
             border-top: 2px solid transparent;
         }
-        .mobile-nav .nav-item.active { border-top-color: var(--gold); background: none; }
+        .mobile-nav .nav-item.active { border-top-color: var(--cobalt); background: none; }
         .mobile-nav .nav-item svg { width: 14px; height: 14px; }
         .mobile-nav .nav-label { font-size: 7.5px; }
         .mobile-nav .nav-tooltip { display: none; }
@@ -171,12 +175,12 @@
         /* ── S1 HERO ── */
         #inicio {
             min-height: 100vh;
-            background: linear-gradient(135deg,#060c16 0%,#0a1827 35%,#0c2040 65%,#0e2848 100%);
+            background: linear-gradient(135deg,#071C38 0%,#0A2A50 60%,#0E3668 100%);
             align-items: center; position: relative; overflow: hidden;
         }
         #inicio::before {
             content: ''; position: absolute; top: -30%; right: -10%; width: 70%; height: 160%;
-            background: radial-gradient(ellipse,rgba(31,111,120,.08) 0%,transparent 70%);
+            background: radial-gradient(ellipse,rgba(22,93,255,.07) 0%,transparent 70%);
             pointer-events: none;
         }
         #inicio::after {
@@ -245,26 +249,26 @@
             background: var(--white); border: .5px solid var(--border);
             border-radius: 8px; padding: 1.8rem; transition: all .25s;
         }
-        .ctx-card:hover { border-color: var(--gold); box-shadow: 0 6px 24px rgba(184,160,110,.1); transform: translateY(-2px); }
+        .ctx-card:hover { border-color: var(--cobalt); box-shadow: 0 6px 24px rgba(22,93,255,.08); transform: translateY(-2px); }
         .ctx-icon {
-            width: 44px; height: 44px; background: var(--navy); border-radius: 50%;
+            width: 44px; height: 44px; background: var(--cobalt); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem; margin-bottom: 1rem;
+            margin-bottom: 1rem;
         }
         .ctx-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy-mid); margin-bottom: .6rem; }
         .ctx-card p  { font-size: .87rem; color: var(--muted); line-height: 1.65; }
         .ctx-footer {
             text-align: center; font-style: italic; font-family: var(--font-d);
-            font-size: 1.1rem; color: var(--navy-mid);
-            padding: 1.4rem 2rem; border-top: 1px solid rgba(15,45,82,.1);
+            font-size: 1.1rem; color: var(--dark-text);
+            padding: 1.4rem 2rem; border-top: 1px solid rgba(22,93,255,.1);
         }
         .val-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
         .val-card {
             background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
             border-radius: 8px; padding: 2rem; transition: all .25s;
         }
-        .val-card:hover { background: rgba(255,255,255,.08); border-color: rgba(184,160,110,.3); }
-        .val-icon { font-size: 1.4rem; margin-bottom: .9rem; }
+        .val-card:hover { background: rgba(255,255,255,.08); border-color: rgba(22,93,255,.2); }
+        .val-icon { width: 28px; height: 3px; background: var(--cobalt); border-radius: 2px; margin-bottom: .9rem; }
         .val-card h3 { font-size: 1.02rem; font-weight: 700; color: var(--white); margin-bottom: .5rem; }
         .val-card p  { font-size: .88rem; color: rgba(255,255,255,.62); line-height: 1.65; }
 
@@ -309,8 +313,8 @@
             background: var(--white); border: .5px solid var(--border);
             border-radius: 8px; padding: 1.6rem; text-align: center; transition: all .25s;
         }
-        .mod-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(184,160,110,.1); }
-        .mod-icon { font-size: 1.5rem; margin-bottom: .7rem; }
+        .mod-card:hover { border-color: var(--cobalt); box-shadow: 0 4px 16px rgba(22,93,255,.08); }
+        .mod-icon { width: 10px; height: 10px; background: var(--cobalt); border-radius: 50%; margin: 0 auto .7rem; display: block; }
         .mod-card h4 { font-size: .93rem; font-weight: 700; color: var(--navy-mid); margin-bottom: .45rem; }
         .mod-card p  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
 
@@ -328,7 +332,7 @@
         .a-pillar p  { font-size: .83rem; color: var(--muted); line-height: 1.55; }
 
         .diff-list { display: flex; flex-direction: column; max-width: 860px; }
-        .diff-item { display: grid; grid-template-columns: 52px 1fr; gap: 1.4rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(15,45,82,.08); align-items: start; }
+        .diff-item { display: grid; grid-template-columns: 52px 1fr; gap: 1.4rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(22,93,255,.08); align-items: start; }
         .diff-item:last-child { border-bottom: none; }
         .diff-num  { font-family: var(--font-d); font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; }
         .diff-body h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy-mid); margin-bottom: .45rem; }
@@ -343,12 +347,12 @@
         .scen-bd { padding: 1.4rem; }
         .scen-lbl { font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
         .scen-bd p  { font-size: .86rem; color: var(--text); line-height: 1.6; margin-bottom: .9rem; }
-        .scen-result { background: rgba(31,112,72,.06); border-left: 3px solid var(--green); padding: .75rem .9rem; border-radius: 0 4px 4px 0; }
-        .scen-result p { font-size: .84rem; color: var(--green); font-weight: 500; margin-bottom: 0; }
+        .scen-result { background: rgba(22,93,255,.06); border-left: 3px solid var(--cobalt); padding: .75rem .9rem; border-radius: 0 4px 4px 0; }
+        .scen-result p { font-size: .84rem; color: var(--cobalt); font-weight: 500; margin-bottom: 0; }
 
         .cli-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
         .cli-tag { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 6px; padding: 1.2rem 1.4rem; transition: all .25s; }
-        .cli-tag:hover { background: rgba(255,255,255,.08); border-color: rgba(184,160,110,.3); }
+        .cli-tag:hover { background: rgba(255,255,255,.08); border-color: rgba(22,93,255,.2); }
         .cli-tag h4 { font-size: .92rem; font-weight: 600; color: var(--white); margin-bottom: .3rem; }
         .cli-tag p  { font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.5; }
         .cli-sector { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: .9rem; }
@@ -357,10 +361,10 @@
         .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
         .partner-card {
             background: var(--white); border-radius: 10px; overflow: hidden;
-            border: .5px solid var(--border); box-shadow: 0 4px 16px rgba(15,45,82,.06);
+            border: .5px solid var(--border); box-shadow: 0 4px 24px rgba(7,28,56,.12);
             transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column;
         }
-        .partner-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(15,45,82,.12); }
+        .partner-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(7,28,56,.18); }
         .partner-photo {
             width: 100%; aspect-ratio: 1/1;
             background: linear-gradient(145deg,var(--navy),var(--navy-mid));
@@ -389,7 +393,8 @@
         .c-info { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.8rem; }
         .c-info a { display: flex; align-items: center; gap: .75rem; color: rgba(255,255,255,.7); text-decoration: none; font-size: .92rem; transition: color .2s; }
         .c-info a:hover { color: var(--gold); }
-        .c-info-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(184,160,110,.15); display: flex; align-items: center; justify-content: center; font-size: .82rem; flex-shrink: 0; }
+        .c-info-icon { width: 34px; height: 34px; border-radius: 50%; background: rgba(22,93,255,.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .c-info-icon::after { content: ''; width: 8px; height: 8px; background: var(--cobalt); border-radius: 50%; }
         .c-form { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 2.5rem; }
         .c-form h3 { font-family: var(--font-d); font-size: 1.3rem; font-weight: 600; color: var(--white); margin-bottom: 1.5rem; }
         .fg { margin-bottom: 1.1rem; }
@@ -412,7 +417,7 @@
         .f-submit { width: 100%; margin-top: .5rem; }
         .f-note { font-size: .76rem; color: rgba(255,255,255,.32); margin-top: .8rem; text-align: center; }
 
-        .site-footer { background: #08192e; padding: 1.8rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,.05); display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+        .site-footer { background: #071C38; padding: 1.8rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,.05); display: flex; flex-direction: column; align-items: center; gap: .6rem; }
         .site-footer img { height: 28px; opacity: .45; }
         .site-footer p { font-size: .76rem; color: rgba(255,255,255,.28); }
 
@@ -581,32 +586,32 @@
         <div class="sub-block-inner">
             <div class="context-grid">
                 <div class="ctx-card">
-                    <div class="ctx-icon">📋</div>
+                    <div class="ctx-icon"></div>
                     <h3>Alta exigencia técnica</h3>
                     <p>El sistema público exige metodologías rigurosas y evaluaciones precisas. El sector privado enfrenta estándares crecientes de sostenibilidad, compromisos regulatorios y demandas de sus stakeholders. En ambos casos, la calidad técnica no es opcional.</p>
                 </div>
                 <div class="ctx-card">
-                    <div class="ctx-icon">🗺️</div>
+                    <div class="ctx-icon"></div>
                     <h3>Territorios complejos y poco comprendidos</h3>
                     <p>La dispersión de fuentes de información y la complejidad de las dinámicas territoriales dificultan diagnósticos sólidos, tanto para la planificación pública como para la inversión social corporativa y el cumplimiento de requisitos regulatorios.</p>
                 </div>
                 <div class="ctx-card">
-                    <div class="ctx-icon">🔗</div>
+                    <div class="ctx-icon"></div>
                     <h3>Iniciativas desarticuladas</h3>
                     <p>Programas, proyectos y acciones gestionadas de forma independiente generan duplicidades, vacíos de atención y oportunidades desaprovechadas — tanto dentro de una organización como entre actores públicos y privados del mismo territorio.</p>
                 </div>
                 <div class="ctx-card">
-                    <div class="ctx-icon">💰</div>
+                    <div class="ctx-icon"></div>
                     <h3>Financiamiento sin estrategia</h3>
                     <p>Abordar cada acción de forma aislada, sin una visión de cartera ni una estrategia que articule las fuentes disponibles — públicas, privadas o mixtas —, impide optimizar los recursos y maximizar el alcance de dichas intervenciones.</p>
                 </div>
                 <div class="ctx-card">
-                    <div class="ctx-icon">📊</div>
+                    <div class="ctx-icon"></div>
                     <h3>Dificultad para demostrar resultados</h3>
                     <p>Muchas organizaciones ejecutan intervenciones sin los sistemas de monitoreo, indicadores ni evaluaciones que permitan medir sus efectos y comunicar resultados ante concejos, directorios, reguladores o comunidades.</p>
                 </div>
                 <div class="ctx-card">
-                    <div class="ctx-icon">🌐</div>
+                    <div class="ctx-icon"></div>
                     <h3>Brechas entre lo público y lo privado</h3>
                     <p>Cuando actores públicos y privados operan sobre un mismo territorio sin coordinación ni lenguaje común, el potencial de articulación se pierde. Construir soluciones compartidas requiere un interlocutor que comprenda e interprete ambas lógicas.</p>
                 </div>
@@ -624,22 +629,22 @@
             <p class="sec-sub sec-sub-lt">Sea una institución pública que gestiona recursos fiscales o una empresa que invierte en su entorno y sus comunidades, existen desafíos comunes: diagnosticar con profundidad, diseñar con pertinencia, evaluar con rigor y demostrar resultados con evidencia. Nuestra propuesta se construye sobre esa convergencia y en función de las particularidades de cada sector.</p>
             <div class="val-grid">
                 <div class="val-card">
-                    <div class="val-icon">🎯</div>
+                    <div class="val-icon"></div>
                     <h3>Base de evidencia para cada decisión</h3>
                     <p>Comprendemos el territorio y sus actores para construir bases de evidencia que respalden decisiones de intervención con fundamento técnico.</p>
                 </div>
                 <div class="val-card">
-                    <div class="val-icon">⚙️</div>
+                    <div class="val-icon"></div>
                     <h3>Cumplimiento técnico robusto</h3>
                     <p>Diseñamos y formulamos programas e iniciativas alineados con las exigencias del sistema público y con los estándares que el sector privado requiere ante reguladores, directorios y comunidades.</p>
                 </div>
                 <div class="val-card">
-                    <div class="val-icon">📊</div>
+                    <div class="val-icon"></div>
                     <h3>Cartera articulada con financiamiento integrado</h3>
                     <p>Organizamos las acciones como un sistema interdependiente — con priorización, secuencia y una estrategia de financiamiento que articula fuentes públicas, privadas y multilaterales.</p>
                 </div>
                 <div class="val-card">
-                    <div class="val-icon">✅</div>
+                    <div class="val-icon"></div>
                     <h3>Evidencia convertida en aprendizaje institucional</h3>
                     <p>Cuando una organización comprende los efectos de sus intervenciones en sus distintas dimensiones, sus decisiones se convierten en estrategia. Implementamos sistemas de monitoreo y evaluación de resultados que convierten la evidencia en aprendizaje institucional.</p>
                 </div>
@@ -716,12 +721,12 @@
             <span class="mod-label">Cómo trabajamos</span>
             <h3 class="mod-title">Flexibilidad, colaboración y transferencia de capacidades</h3>
             <div class="mod-grid">
-                <div class="mod-card"><div class="mod-icon">📦</div><h4>Por producto</h4><p>Entregable específico y acotado para una necesidad concreta: un diagnóstico, una formulación, una evaluación, una estrategia de financiamiento.</p></div>
-                <div class="mod-card"><div class="mod-icon">🔄</div><h4>Asesoría integral</h4><p>Acompañamiento del ciclo completo de iniciativas, encadenando servicios en una secuencia planificada y adaptada al contexto del contratante.</p></div>
-                <div class="mod-card"><div class="mod-icon">🔍</div><h4>Contraparte técnica</h4><p>Supervisión de estudios contratados a terceros, asegurando calidad metodológica y consistencia con las exigencias aplicables. Incluye revisión de términos de referencia y validación de resultados.</p></div>
-                <div class="mod-card"><div class="mod-icon">🤝</div><h4>Apoyo a equipos</h4><p>Trabajo colaborativo que transfiere capacidades a los equipos técnicos del contratante durante la ejecución del mandato. El equipo aprende haciendo, con acompañamiento directo en cada etapa.</p></div>
-                <div class="mod-card"><div class="mod-icon">🎓</div><h4>Talleres de capacitación</h4><p>Jornadas sin currículo cerrado, adaptadas a la realidad del equipo. Las temáticas corresponden a los servicios de los cuatro pilares.</p></div>
-                <div class="mod-card"><div class="mod-icon">🎤</div><h4>Presentación de resultados</h4><p>Apoyo para comunicar propuestas y resultados ante autoridades, directorios, concejos, consejos regionales y comunidades. Traducimos la complejidad técnica en argumentos comprensibles y persuasivos.</p></div>
+                <div class="mod-card"><div class="mod-icon"></div><h4>Por producto</h4><p>Entregable específico y acotado para una necesidad concreta: un diagnóstico, una formulación, una evaluación, una estrategia de financiamiento.</p></div>
+                <div class="mod-card"><div class="mod-icon"></div><h4>Asesoría integral</h4><p>Acompañamiento del ciclo completo de iniciativas, encadenando servicios en una secuencia planificada y adaptada al contexto del contratante.</p></div>
+                <div class="mod-card"><div class="mod-icon"></div><h4>Contraparte técnica</h4><p>Supervisión de estudios contratados a terceros, asegurando calidad metodológica y consistencia con las exigencias aplicables. Incluye revisión de términos de referencia y validación de resultados.</p></div>
+                <div class="mod-card"><div class="mod-icon"></div><h4>Apoyo a equipos</h4><p>Trabajo colaborativo que transfiere capacidades a los equipos técnicos del contratante durante la ejecución del mandato. El equipo aprende haciendo, con acompañamiento directo en cada etapa.</p></div>
+                <div class="mod-card"><div class="mod-icon"></div><h4>Talleres de capacitación</h4><p>Jornadas sin currículo cerrado, adaptadas a la realidad del equipo. Las temáticas corresponden a los servicios de los cuatro pilares.</p></div>
+                <div class="mod-card"><div class="mod-icon"></div><h4>Presentación de resultados</h4><p>Apoyo para comunicar propuestas y resultados ante autoridades, directorios, concejos, consejos regionales y comunidades. Traducimos la complejidad técnica en argumentos comprensibles y persuasivos.</p></div>
             </div>
         </div>
     </div>
@@ -996,7 +1001,7 @@
 ───────────────────────────────────── -->
 <section id="conversemos" class="section-panel" role="region" aria-label="Conversemos">
 
-    <div class="sub-block" style="background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy) 40%,var(--navy-mid) 100%)">
+    <div class="sub-block" style="background:linear-gradient(135deg,#071C38 0%,#0A2A50 60%,#0E3668 100%)">
         <div class="sub-block-inner">
             <div class="contact-grid">
                 <div class="c-left">
@@ -1007,11 +1012,11 @@
                     <p style="font-style:italic;color:var(--gold-lt)">Cuéntanos cuál es tu desafío más complejo.</p>
                     <div class="c-info">
                         <a href="/cdn-cgi/l/email-protection#aac9c5c4decbc9dec5eacbd9cfd9c5d8c3cbd9c9c4dc84c9c6">
-                            <div class="c-info-icon">✉</div>
+                            <div class="c-info-icon"></div>
                             <span class="__cf_email__" data-cfemail="70131f1e041113041f30110315031f02191103131e065e131c">[email&#160;protected]</span>
                         </a>
                         <a href="https://www.asesoriascnv.cl">
-                            <div class="c-info-icon">🌐</div>
+                            <div class="c-info-icon"></div>
                             www.asesoriascnv.cl
                         </a>
                     </div>
@@ -1064,8 +1069,8 @@
                         <p class="f-note">Te responderemos a la brevedad.</p>
                     </form>
                     <div id="formSuccess" style="display:none;text-align:center;padding:3rem 1rem">
-                        <div style="font-size:2.5rem;margin-bottom:1rem">✓</div>
-                        <h3 style="font-family:var(--font-d);font-size:1.4rem;color:var(--gold-lt);margin-bottom:.8rem">Mensaje enviado</h3>
+                        <div style="width:48px;height:48px;border-radius:50%;background:var(--cobalt);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:var(--white);font-size:1.2rem;font-weight:700">✓</div>
+                        <h3 style="font-family:var(--font-d);font-size:1.4rem;color:var(--cyan);margin-bottom:.8rem">Mensaje enviado</h3>
                         <p style="font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.6">Gracias por contactarnos. Te responderemos a la brevedad.</p>
                     </div>
                     <div id="formError" style="display:none;text-align:center;padding:2rem 1rem">

@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Francisca Moreno Montealegre · Asesorías CNV</title>
     <meta name="description" content="Francisca Moreno Montealegre — Socia CNV. Más de 14 años de experiencia en políticas públicas, evaluación y monitoreo de programas sociales.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy:      #0f2d52;
-            --navy-mid:  #1b3a5c;
-            --navy-dark: #1a1a2e;
-            --gold:      #c28828;
-            --gold-lt:   #daa83c;
-            --bg:        #f5f6f4;
-            --light-bg:  #e8ebe5;
-            --card-bg:   #eef0ec;
-            --text:      #111827;
-            --muted:     #3d5166;
+            --navy:      #071C38;
+            --navy-mid:  #071C38;
+            --navy-dark: #071C38;
+            --cobalt:    #165DFF;
+            --cyan:      #3FD7FF;
+            --gold:      #165DFF;
+            --gold-lt:   #3FD7FF;
+            --snow:      #F8FBFF;
+            --bg:        #F8FBFF;
+            --light-bg:  #F8FBFF;
+            --card-bg:   #F8FBFF;
+            --slate:     #536A86;
+            --dark-text: #0C1B2A;
+            --text:      #0C1B2A;
+            --muted:     #536A86;
             --white:     #ffffff;
-            --teal:      #1f6f78;
-            --border:    rgba(15,45,82,0.12);
-            --font-d:    'Cormorant Garamond', Georgia, serif;
-            --font-b:    'Source Sans 3', 'Segoe UI', Calibri, sans-serif;
+            --light-ice: #EAF6FF;
+            --soft-blue: #B9CEE8;
+            --teal:      #3FD7FF;
+            --border:    rgba(22,93,255,0.12);
+            --font-d:    'Aptos Display', Calibri, 'Segoe UI', sans-serif;
+            --font-b:    'Aptos', Calibri, 'Segoe UI', sans-serif;
             --sw:        72px;
             --mnh:       56px;
         }
@@ -68,7 +72,7 @@
             text-decoration: none; font-family: var(--font-b);
         }
         .nav-item:hover  { color: rgba(255,255,255,.75); background: rgba(255,255,255,.04); }
-        .nav-item.active { color: var(--gold); background: rgba(184,160,110,.18); }
+        .nav-item.active { color: var(--cobalt); background: rgba(22,93,255,.18); }
         .nav-item svg {
             width: 16px; height: 16px;
             stroke: currentColor; fill: none;
@@ -79,7 +83,7 @@
             font-size: 7.5px; font-weight: 600;
             letter-spacing: .05em; text-transform: uppercase; line-height: 1;
         }
-        .nav-item:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+        .nav-item:focus-visible { outline: 2px solid var(--cobalt); outline-offset: -2px; }
 
         .sidebar-nav { display: flex; flex-direction: column; align-items: stretch; flex: 1; width: 100%; }
         .sidebar-bottom { width: 100%; border-top: 1px solid rgba(255,255,255,.06); padding-top: .4rem; }
@@ -127,13 +131,13 @@
 
         /* ── PROFILE HERO ── */
         .profile-hero {
-            background: linear-gradient(135deg,#060c16 0%,#0a1827 35%,#0c2040 65%,#0e2848 100%);
+            background: linear-gradient(135deg,#071C38 0%,#0A2A50 60%,#0E3668 100%);
             position: relative; overflow: hidden;
             padding: 4rem 3rem 0;
         }
         .profile-hero::before {
             content: ''; position: absolute; top: -30%; right: -10%; width: 70%; height: 160%;
-            background: radial-gradient(ellipse,rgba(194,136,40,.07) 0%,transparent 70%);
+            background: radial-gradient(ellipse,rgba(22,93,255,.07) 0%,transparent 70%);
             pointer-events: none;
         }
         .profile-hero::after {
@@ -164,7 +168,7 @@
 
         .profile-info-card {
             background: var(--white); border-radius: 10px; padding: 1.5rem;
-            box-shadow: 0 4px 20px rgba(15,45,82,.08);
+            box-shadow: 0 4px 24px rgba(7,28,56,.12);
         }
         .info-label {
             font-size: .72rem; font-weight: 700; letter-spacing: .15em;
@@ -209,7 +213,7 @@
         }
         .profile-bio {
             background: var(--white); border-radius: 10px; padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(15,45,82,.07);
+            box-shadow: 0 4px 24px rgba(7,28,56,.12);
         }
         .profile-bio p { font-size: 1.03rem; line-height: 1.85; color: var(--text); margin-bottom: 1.4rem; }
         .profile-bio p:last-child { margin-bottom: 0; }
@@ -234,7 +238,7 @@
 
         /* ── FOOTER ── */
         .site-footer {
-            background: #08192e; padding: 1.8rem 2rem; text-align: center;
+            background: #071C38; padding: 1.8rem 2rem; text-align: center;
             border-top: 1px solid rgba(255,255,255,.05);
             display: flex; flex-direction: column; align-items: center; gap: .6rem;
         }
